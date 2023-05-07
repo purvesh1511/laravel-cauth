@@ -34,6 +34,11 @@ trait InstallsBladeStack
         (new Filesystem)->ensureDirectoryExists(app_path('Http/Requests'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests', app_path('Http/Requests'));
 
+        // Repositary...
+        (new Filesystem)->ensureDirectoryExists(app_path('Repositories'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Repositories', app_path('Repositories'));
+
+                
         // Views...
         (new Filesystem)->ensureDirectoryExists(resource_path('views'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views', resource_path('views'));
