@@ -35,7 +35,7 @@ class InstallCommand extends Command
      * blade.api
      * @var array<int, string>
      */
-    protected $stacks = ['blade', 'api'];
+    protected $stacks = ['blade'];
 
     /**
      * Execute the console command.
@@ -69,7 +69,8 @@ class InstallCommand extends Command
             $input->setArgument('stack', 'api');
         }
         
-        $input->setArgument('stack', $this->ask('Which stack would you like to install?', implode("|",$this->stacks)));
+        $input->setArgument('stack', "blade");
+        // $input->setArgument('stack', $this->ask('Which stack would you like to install?', implode("|",$this->stacks)));
 
         // $input->setOption('pest', $this->ask('Would you prefer Pest tests instead of PHPUnit?'));
     }
